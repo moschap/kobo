@@ -7,7 +7,6 @@ import {
 import { Icon } from 'react-native-elements';
 
 import { css } from '../../styles';
-import { applyFilterToSMS } from '../helpers/SMSHelpers';
 
 
  

@@ -3,6 +3,8 @@ package com.lsmn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.react.SmsPackage;
+import com.evollu.react.fcm.FIRMessagingPackage;
 import com.centaurwarchief.smslistener.SmsListenerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +27,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SmsPackage(),
+            new FIRMessagingPackage(),
             new SmsListenerPackage(),
             new VectorIconsPackage()
       );

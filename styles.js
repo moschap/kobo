@@ -13,7 +13,8 @@ const blue = {
     light_shade: '#e8ebf4',
     font_color: '#fff',
     statusbar_color: '#0b101c',//'#04133f',
-    font_color_light: '#474645'
+    font_color_light: '#474645',
+    dashboard_background_color: '#d1d6e2'
 }
 
 const styles = {
@@ -99,6 +100,22 @@ export const css = (theme = 'blue') => {
                     paddingHorizontal: 15,
                     backgroundColor: blue.light_shade,
                 },
+                dashboardContainer: {
+                    flex: 1,
+                    maxHeight: '15%',
+                    width: '100%',
+                    padding: 10,
+                    marginVertical: 5,
+                    flexDirection: 'row',
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
+                    backgroundColor: blue.dashboard_background_color
+                },
+                dashboardCountTextStyle: {
+                    fontWeight: '500',
+                    fontSize: 32,
+                    color: '#032263'
+                },
                 containerLightHorizontal: {
                     flex: 1,
                     flexDirection: 'row',
@@ -143,6 +160,17 @@ export const css = (theme = 'blue') => {
                     textAlign: 'center',
                     color: blue.dark_shade,
                     fontSize: 16
+                },
+                dashboardTitleStyle: {
+                    textAlign: 'left',
+                    color: blue.darkest_shade,
+                    fontSize: 14,
+                    fontWeight: '500'
+                },
+                dashboardSubTitleStyle: {
+                    textAlign: 'center',
+                    color: blue.darkest_shade,
+                    fontSize: 14
                 },
             }
         default:
