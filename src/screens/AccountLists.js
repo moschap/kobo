@@ -4,8 +4,12 @@ import {
     View,
     Text
 } from 'react-native';
-import { css } from '../../styles';
 import { Icon } from 'react-native-elements';
+
+import { css } from '../../styles';
+import { applyFilterToSMS } from '../helpers/SMSHelpers';
+
+
  
 export default class AccountLists extends Component {
     static navigationOptions = ({navivate}) => ({
