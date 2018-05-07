@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import ActionButton from 'react-native-action-button';
 import {
-    View,
-    Text
+    FlatList,
+    View 
 } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Icon, ListItem } from 'react-native-elements';
 
 import { css } from '../../styles';
+import { AppContext } from '../AppContext';
+import { 
+    BankDataItem, 
+    BankDataItemList,
+    ListHeaderComponent,
+    ListItemSeparatorComponent
+} from '../components';
 
 
  
@@ -25,14 +32,24 @@ export default class AccountLists extends Component {
         }
     });
     
+    renderItems({ item }) {
+        return (
+            <BankDataItem bankName={item.name} />
+        );
+    }
+
     render() {
         return(
-            <View style={css().normalContainerLight}>                
-                <Text style={css().notice}>
-                AccountList
-                </Text>
+            <View style={[css().normalContainerLight, { padding: 0}]}>    
+                <BankDataItemList
+                    style={{ width: '100%'}}
+                    renderItem={this.renderItems}
+                    headerTitle='Monitored Accounts'
+                    ItemSeparatorComponent={() => <ListItemSeparatorComponent />}
+                />           
+                
                 <ActionButton
-                    buttonColor='#223ca2'//{css().tabHeaderColor}//"rgba(231,76,60,1)"
+                    buttonColor='#223ca2'
                     onPress={() => this.props.navigation.navigate('addaccount')}
                 />
             </View>

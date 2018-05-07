@@ -1,4 +1,12 @@
+const badgeColor = [
+    'black',
+    'darkmagenta',
+    'maroon'
+];
 
+const getRandomColor = (max) => {
+    return badgeColor[Math.floor(Math.random() * Math.floor(max))];
+} 
 const dark = {
     darkest_shade: '#040404',
     dark_shade: '#171717',
@@ -85,6 +93,41 @@ export const css = (theme = 'blue') => {
                     alignItems: 'center',
                     backgroundColor: blue.darkest_shade,
                 },
+                newContainer: {
+                    flex: 1,
+                    justifyContent: 'center'
+                },
+                horizontal: {
+                    flexDirection: 'row',
+                    justifyContent: 'space-evenly',
+                    padding: 10
+                },
+                vertical: {
+                    flexDirection: 'column',
+                    justifyContent: 'space-evenly',
+                    padding: 10
+                },
+                bankMainContainer: {
+                    flex: 1, 
+                    maxHeight: '100%', 
+                    paddingVertical: 10, 
+                    paddingHorizontal: 5, 
+                    flexDirection: 'row', 
+                    backgroundColor: '#fafafa'
+                },
+                bankSubContainer: (flex, alignItems = 'flex-start') => ({
+                    flex,
+                    alignItems,
+                    justifyContent: 'center'
+                }),
+                bankInnerContainer: { 
+                    width: 40, 
+                    height: 40, 
+                    borderRadius: 40, 
+                    backgroundColor: getRandomColor(3),
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                },
                 containerLight: {
                     flex: 1,
                     width: '100%',
@@ -95,9 +138,9 @@ export const css = (theme = 'blue') => {
                 normalContainerLight: {
                     flex: 1,
                     width: '100%',
-                    paddingVertical: 20,
+                    paddingVertical: 10,
                     alignItems: 'center',
-                    paddingHorizontal: 15,
+                    //paddingHorizontal: 10,
                     backgroundColor: blue.light_shade,
                 },
                 dashboardContainer: {

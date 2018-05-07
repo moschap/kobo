@@ -5,20 +5,15 @@
  */
 
 import React, { Component } from 'react';
-import FCM from 'react-native-fcm';
 
 import UnauthorizedStack from './src/router';
+//import { registerAppListener } from ''
 
 
 
 //type Props = {};
 export default class App extends Component {
-  componentDidMount() {
-    FCM.getFCMToken().then(token => {
-        console.log("TOKEN (getFCMToken)", token);
-        //this.setState({token: token || ""})
-    });
-  }
+  
   render() {
     return (
       <UnauthorizedStack />

@@ -1,0 +1,17 @@
+Context data:
+===============
+{
+    fcmID: '',
+    authState: 'unauthorized',// or authorized
+    phoneNumber: '',
+    updateFcmID: () => {}
+    updateAuthState: () => {}
+    updatePhoneNumber: () => {}
+}
+
+
+processSMS Steps:
+1. load all messages
+2. filter the message to see the ones that match any of the banks
+3. foreach over the data and create a Map with structure = Map(senderId => [{body, date}, {body, date}])
+4. update the context data with the new payload

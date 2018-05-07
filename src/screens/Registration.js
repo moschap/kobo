@@ -43,7 +43,7 @@ export default class Registration extends Component {
                     Your phone number is required to set you up on Kobo!
                 </Text>
                 <TextInput 
-                    placeholder='e.g. +2348100001111'
+                    placeholder='e.g. 8100001111'
                     style={[css().emailInputText, { marginVertical: 10}]}
                 />
                 <Button
